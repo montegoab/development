@@ -20,7 +20,7 @@ print "Hello world";
 
 
     var isiPad = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i) != null;
-var event = (isiPad) ? 'touchstart':'click';
+var event = (isiPad) ? 'touchstart touchmove touchend':'click';
 var device = event;
 $("#device").html(device);
 
@@ -28,14 +28,14 @@ if(device=="touchstart"){
     $('.inboxSupplier').css('color','blue');
 }
 
-$(document).on(event,'td',function() {
-    alert(event);
+$(document).on('touchstart touchend touchmove click','td',function(event) {
+   
     if ($(this).find('input[type=checkbox]').length>0) {
         return true;
     } else if ($(this).parent().attr('data-url')) {
-        alert("touch");
         var url = $(this).parent().attr('data-url');
-        if(device=="touchstart"){
+        if(device!="click"){
+            console.log(event.target);
             switch (event.type) {
                 case "touchstart": 
                   touchObj = url;
