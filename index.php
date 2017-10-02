@@ -34,7 +34,6 @@ $(document).on('touchstart touchend touchmove click','td',function() {
         
         var url = $(this).parent().attr('data-url');
         if(device=="touchstart"){
-             console.log(url);
             switch (event.type) {
                 case "touchstart": 
                   touchObj = url;
@@ -54,7 +53,7 @@ $(document).on('touchstart touchend touchmove click','td',function() {
 
         }
         else{
-            console.log("mouseclick");
+            alert("mouseclick");
             // location.href=$(this).parent().attr('data-url');
 
         }
