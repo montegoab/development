@@ -27,11 +27,11 @@ if(device=="touchstart"){
     $('.inboxSupplier').css('color','blue');
 }
 
-$(document).on('touchstart touchend touchmove click','td',function() {
+$(document).on('click','td',function() {
     if ($(this).find('input[type=checkbox]').length>0) {
         return true;
     } else if ($(this).parent().attr('data-url')) {
-        
+        alert("touch")
         var url = $(this).parent().attr('data-url');
         if(device=="touchstart"){
             switch (event.type) {
