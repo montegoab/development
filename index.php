@@ -17,21 +17,23 @@ print "Hello world";
 	$(document).ready(function() {
     $('#example').DataTable();
 
-} );
+
 
     var isiPad = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i) != null;
 var event = (isiPad) ? 'touchstart':'click';
 var device = event;
+$("#device").html(device);
 
 if(device=="touchstart"){
     $('.inboxSupplier').css('color','blue');
 }
 
-$(document).on('click','td',function() {
+$(document).on(event,'td',function() {
+    alert(event);
     if ($(this).find('input[type=checkbox]').length>0) {
         return true;
     } else if ($(this).parent().attr('data-url')) {
-        alert("touch")
+        alert("touch");
         var url = $(this).parent().attr('data-url');
         if(device=="touchstart"){
             switch (event.type) {
@@ -59,10 +61,12 @@ $(document).on('click','td',function() {
         }
     }
 });
+} );
 </script>
 </script>
 <body>
 	<div>
+        <span id="device"></span>
 		<table id="example" class="display" cellspacing="0" width="100%">
         <thead>
             <tr>
