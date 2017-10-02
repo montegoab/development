@@ -8,6 +8,7 @@ print "Hello world";
 	<title>Development</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.csss"/>
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.16/b-1.4.2/b-html5-1.4.2/r-2.2.0/sl-1.2.3/datatables.min.css"/>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.16/b-1.4.2/b-html5-1.4.2/r-2.2.0/sl-1.2.3/datatables.min.js"></script>
 
